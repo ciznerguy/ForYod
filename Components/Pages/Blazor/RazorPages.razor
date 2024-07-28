@@ -1,0 +1,68 @@
+﻿@page "/razor-pages"
+
+<h3 style="border-bottom: 2px solid black; text-align: center;">בניית דפי Razor</h3>
+<style>
+    code {
+        direction: ltr;
+        text-align: left;
+        unicode-bidi: embed;
+        display: block;
+        background-color: #f0f0f0; /* צבע רקע אפור */
+        padding: 10px; /* מוסיף קצת רווח פנימי */
+        border-radius: 5px; /* פינות מעוגלות */
+        white-space: pre-wrap; /* שמירה על רווחים ושורות חדשות */
+    }
+
+    pre {
+        direction: rtl;
+        text-align: right;
+        unicode-bidi: embed;
+    }
+</style>
+
+<h1 style="border-bottom: 2px solid black; text-align: center;">הנה מדריך בסיסי לעבודה עם דפי Razor ב-Blazor.</h1>
+<br />
+<br />
+
+<h4>שלב 1: יצירת דף Razor חדש </h4>
+
+<pre>
+מצא את תיקיית Pages בפרויקט.
+לחץ לחיצה ימנית על התיקייה Pages ובחר "Add" -> "New Item".
+בחר "Razor Component"
+תן שם לקובץ החדש (למשל, MyPage.razor) ולחץ על "Add".
+
+הדף החדש שנוצר הוא דף מיוחד שכולל בתוכו יכולות של דף אינטרנט רגיל עם HTML ו CSS
+אבל בנוסף יש לנו יכולת לשלב קוד בשפת סי שארפ.
+זה דף שאנו משתמשים בשפת תכנות כדי להריץ דף אינטרנט
+</pre>
+
+<h4>שלב 2: כתיבת קוד HTML ודינמיקה עם C#</h4>
+
+<pre>
+פתח את הקובץ MyPage.razor.
+כתוב את הקוד הבא לדוגמה כדי ליצור דף פשוט עם כותרת וכפתור שמבצע פעולה בעת לחיצה:
+
+<img src="/images/razorcode.png" />
+
+
+</pre>
+<h4>
+    שלב 3: ניווט לדף החדש
+</h4>
+
+<pre>
+    פתח את הקובץ NavMenu.razor שנמצא בתיקייה Shared.
+הוסף קישור לדף החדש שנוצר, למשל:
+<img src="/images/razorlinks.png" />
+
+</pre>
+
+<h4> שלב 4: הרצת הפרויקט וצפיה בדף
+ </h4>
+
+<pre>
+
+    לחץ על כפתור "Run" או "F5" כדי להפעיל את הפרויקט.
+פתח את הדפדפן שלך והנווט אל הנתיב /mypage או השתמש בקישור שנוסף לתפריט הניווט.
+</pre>

@@ -1,0 +1,84 @@
+﻿@inherits LayoutComponentBase
+@using ForYod.Components.Layout
+@inject ForYod.Components.Services.UserService UserService
+@inject NavigationManager Navigation
+
+<style>
+    body {
+        direction: rtl;
+    }
+
+    .top-left {
+        position: fixed;
+        top: 10px;
+        left: 10px;
+        z-index: 1000; /* Ensure it stays on top */
+    }
+</style>
+
+<div class="top-left">
+    @if (UserService.FullName == "not")
+    {
+        <button @onclick="RedirectToLogin" class="btn btn-primary">Login</button>
+    }
+    else
+    {
+        <p>שלום, @UserService.FullName!</p>
+    }
+</div>
+
+<div class="page">
+    <div class="sidebar">
+        <NavMenu />
+    </div>
+
+    <main>
+        <article class="content px-4">
+            @Body
+        </article>
+    </main>
+</div>
+
+<footer class="footer">
+    <div class="footer-content">
+        <div class="footer-text">
+            <!-- Add your footer text here -->
+            <p>אתר קורס תכנות באינטרנט של ציזנר גיא</p>
+        </div>
+        <div class="footer-menus">
+            <!-- Add your footer menus here -->
+            <ul>
+                <li><a href="/privacy">Privacy Policy</a></li>
+                <li><a href="/terms">Terms of Service</a></li>
+                <li><a href="/contact">Contact Us</a></li>
+            </ul>
+        </div>
+    </div>
+    <div id="bthn" lang="en"></div>
+    <script>
+        (function () {
+            var script = document.createElement("script");
+            script.type = "text/javascript";
+            script.src = "https://bringthemhomenow.net/1.1.0/hostages-ticker.js";
+            script.setAttribute(
+                "integrity",
+                "sha384-DHuakkmS4DXvIW79Ttuqjvl95NepBRwfVGx6bmqBJVVwqsosq8hROrydHItKdsne"
+            );
+            script.setAttribute("crossorigin", "anonymous");
+            document.getElementsByTagName("head")[0].appendChild(script);
+        })();
+    </script>
+</footer>
+
+<div id="blazor-error-ui">
+    An unhandled error has occurred.
+    <a href="" class="reload">Reload</a>
+    <a class="dismiss">🗙</a>
+</div>
+
+@code {
+    private void RedirectToLogin()
+    {
+        Navigation.NavigateTo("/login");
+    }
+}

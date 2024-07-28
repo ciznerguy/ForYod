@@ -1,0 +1,61 @@
+﻿@page "/employee-list"
+@using ForYod.Model
+@using Microsoft.EntityFrameworkCore
+@inject AppDbContext DbContext
+
+<h3>Employee List</h3>
+
+@if (!string.IsNullOrEmpty(errorMessage))
+{
+    <div class="alert alert-danger">@errorMessage</div>
+}
+else if (employees == null)
+{
+    <p><em>Loading...</em></p>
+}
+else
+{
+    <div class="table-responsive">
+        <table class="table table-striped table-bordered">
+            <thead class="thead-dark">
+                <tr>
+                    <th>ID</th>
+                    <th>First Name</th>
+                    <th>Last Name</th>
+                    <th>Email Address</th>
+                    <th>Department</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var employee in employees)
+                {
+                    <tr>
+                        <td>@employee.ID</td>
+                        <td>@employee.FirstName</td>
+                        <td>@employee.LastName</td>
+                        <td>@employee.EmailAddress</td>
+                        <td>@employee.Department</td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+}
+
+@code {
+    private List<Employee> ?employees;
+    private string ?errorMessage;
+
+    protected override async Task OnInitializedAsync()
+    {
+        try
+        {
+            employees = await DbContext.Employees.ToListAsync();
+        }
+        catch (Exception ex)
+        {
+            errorMessage = ex.Message;
+            Console.WriteLine(ex.ToString());
+        }
+    }
+}

@@ -1,0 +1,53 @@
+﻿@page "/create-first-Table"
+@namespace ForYod.Components.Pages.SQLite_DB
+
+@* הגדרת סגנון לעמוד RTL *@
+<style>
+     code {
+         direction: ltr;
+         text-align: left;
+         unicode-bidi: embed;
+         display: block;
+         background-color: #f0f0f0; /* צבע רקע אפור */
+         padding: 10px; /* מוסיף קצת רווח פנימי */
+         border-radius: 5px; /* פינות מעוגלות */
+     }
+
+     pre {
+         direction: rtl;
+         text-align: right;
+         unicode-bidi: embed;
+     }
+</style>
+    
+
+<h1>הוספת טבלה לבסיס הנתונים</h1>
+<h4>שלב 1: יצירת טבלה חדשה</h4>
+<pre>
+לחץ על הכרטיסייה Structure.
+לחץ על Create Table.
+בחלון שנפתח, הזן שם לטבלה (למשל, employess).
+הוסף עמודות לטבלה על ידי הזנת השם והסוג של כל עמודה. לדוגמה:
+id עם סוג INTEGER ותיוג כ-Primary Key.
+name עם סוג TEXT.
+email עם סוג TEXT ותיוג כ-Unique.
+לאחר שהוספת את כל העמודות, לחץ על OK.
+</pre>
+
+<h4>כתיבת סקריפט SQL ליצירת טבלה</h4>
+<pre>
+זוהי דרך נוספת ליצירת טבלה על ידי כתיבת קטע קוד ב-SQL.
+אחר החיבור למסד הנתונים, לחץ לחיצה ימנית על החיבור שלך ב-SQLite Toolbox ובחר ב- New Query (שאילתה חדשה).
+ייפתח חלון חדש לעריכת קוד ה-SQL.
+כתוב את סקריפט ה-SQL שלך בחלון העריכה. לדוגמה, אם תרצה ליצור טבלת סטודנטים:
+<code>
+CREATE TABLE employees (
+    Id INTEGER PRIMARY KEY AUTOINCREMENT,
+    FirstName TEXT NOT NULL,
+    LastName TEXT NOT NULL,
+    Email TEXT NOT NULL UNIQUE,
+    Department TEXT NOT NULL,
+
+);
+</code>
+</pre>

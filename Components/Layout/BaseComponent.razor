@@ -1,0 +1,17 @@
+﻿@page "/basecomponent"
+@using ForYod.Components.Services
+@code {
+    [Inject]
+    public UserService UserService { get; set; }
+}
+
+<div class="top-left">
+    @if (UserService.FullName == "not")
+    {
+        <p>not logged</p>
+    }
+    else
+    {
+        <p>שלום, @UserService.FullName!</p>
+    }
+</div>

@@ -1,0 +1,106 @@
+﻿@page "/html-lesson2"
+
+@* הגדרת סגנון לעמוד RTL *@
+<style>
+    code {
+        direction: ltr;
+        text-align: left;
+        unicode-bidi: embed;
+        display: block;
+        background-color: #f0f0f0; /* צבע רקע אפור */
+        padding: 10px; /* מוסיף קצת רווח פנימי */
+        border-radius: 5px; /* פינות מעוגלות */
+    }
+
+    pre {
+        direction: rtl;
+        text-align: right;
+        unicode-bidi: embed;
+    }
+</style>
+
+<h1 style="border-bottom: 2px solid black; text-align: center;">תרגול HTML - חלק שני</h1>
+
+
+<br />
+<br />
+<br />
+<br />
+
+
+
+
+
+<p> בחלק הזה של המדריך יש להעתיק את הקוד לדף שיצרת ולראות את התוצאה כאשר נפתח את הדף בדפדפן</p>
+<h2>כותרות</h2>
+<p>כותרות מאפשרות לנו לחלק את הדף לחלקים ברורים ומובנים. הכותרות מסודרות לפי רמות מ-1 (הכי גדולה וחשובה) עד 6 (הכי קטנה). להלן דוגמה לכותרות ברמות שונות:</p>
+
+<pre>
+<code>
+&lt;h1&gt;כותרת ראשית&lt;/h1&gt;
+&lt;h2&gt;כותרת שנייה&lt;/h2&gt;
+&lt;h3&gt;כותרת שלישית&lt;/h3&gt;
+&lt;h4&gt;כותרת רביעית&lt;/h4&gt;
+&lt;h5&gt;כותרת חמישית&lt;/h5&gt;
+&lt;h6&gt;כותרת שישית&lt;/h6&gt;
+</code>
+</pre>
+
+<h2>פסקאות</h2>
+<p>פסקאות משמשות לכתיבת טקסט רציף בדף. כל פסקה נכתבת בתוך תגית <code>&lt;p&gt;</code>. להלן דוגמה לפסקאות:</p>
+
+<pre>
+<code>
+&lt;p&gt;זהו פסקה ראשונה. הפסקה הזו מדגימה כיצד ניתן לכתוב טקסט בפסקה.&lt;/p&gt;
+&lt;p&gt;זהו פסקה שנייה. ניתן להוסיף כמה פסקאות שתרצו.&lt;/p&gt;
+</code>
+</pre>
+
+<h2>צבע לטקסט</h2>
+<p>ניתן לשנות את צבע הטקסט באמצעות התכונה <code>style</code> בתוך התגית <code>&lt;p&gt;</code>. להלן דוגמה לשימוש בצבעים שונים:</p>
+
+<pre>
+<code>
+&lt;p style="color: red;"&gt;פסקה זו כתובה בצבע אדום.&lt;/p&gt;
+&lt;p style="color: blue;"&gt;פסקה זו כתובה בצבע כחול.&lt;/p&gt;
+&lt;p style="color: green;"&gt;פסקה זו כתובה בצבע ירוק.&lt;/p&gt;
+</code>
+</pre>
+
+<h2>יצירת טבלה</h2>
+<p>טבלה מורכבת משורות ועמודות. כל שורה נוצרת עם תגית <code>&lt;tr&gt;</code> וכל תא בטבלה (עמודה) נוצר עם תגית <code>&lt;td&gt;</code>. להלן דוגמה לטבלה עם 3 עמודות ו-4 שורות:</p>
+
+<pre>
+<code>
+&lt;table border="1"&gt;
+    &lt;tr&gt;
+        &lt;td&gt;תא 1&lt;/td&gt;
+        &lt;td&gt;תא 2&lt;/td&gt;
+        &lt;td&gt;תא 3&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+        &lt;td&gt;תא 4&lt;/td&gt;
+        &lt;td&gt;תא 5&lt;/td&gt;
+        &lt;td&gt;תא 6&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+        &lt;td&gt;תא 7&lt;/td&gt;
+        &lt;td&gt;תא 8&lt;/td&gt;
+        &lt;td&gt;תא 9&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+        &lt;td&gt;תא 10&lt;/td&gt;
+        &lt;td&gt;תא 11&lt;/td&gt;
+        &lt;td&gt;תא 12&lt;/td&gt;
+    &lt;/tr&gt;
+&lt;/table&gt;
+</code>
+</pre>
+
+<a href="#bottom" class="scroll-down">
+    &darr;
+</a>
+
+<div id="bottom"></div>
+
+

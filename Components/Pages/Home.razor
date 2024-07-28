@@ -1,0 +1,110 @@
+﻿@page "/"
+@inject ForYod.Components.Services.UserService UserService
+@inject NavigationManager Navigation
+
+<PageTitle>דף הבית</PageTitle>
+
+<style>
+    body {
+        direction: rtl;
+    }
+
+    .top-right {
+        position: absolute;
+        top: 10px;
+        right: 10px;
+    }
+</style>
+
+@if (UserService.FullName == "not")
+{
+    <button @onclick="RedirectToLogin" class="btn btn-primary top-right">Login</button>
+}
+else
+{
+    <p class="top-right">ברוך הבא, @UserService.FullName!</p>
+}
+
+<h1>אתר בנושא תכנות באינטרנט</h1>
+
+ברוכים הבאים לאתר קורס "תיכנות בסביבת אינטרנט בשפת #C"
+<br />
+באתר זה נלמד את תכני הקורס הנדרשים ונלמד לבנות אתר הכולל מסד נתונים
+
+<br />
+האתר יכלול שיעורים במטרה ללמוד כיצד לבנות את הפרויקט שלכם וכיצד להגישו
+בסוף הקורס והלמידה יהיה לכם אתר פונקציונלי ומוכן לשימוש
+<h2>נושאי הלימוד</h2>
+
+<ul>
+    <li>מבוא</li>
+    <li>HTML & CSS</li>
+    <li>Bootstrap</li>
+    <li>בסיסי נתונים</li>
+    <li> Blazor בניית אתר בעזרת</li>
+    <li>בניית הפרויקט</li>
+    <li> פרק בונוס - שרתי אזורה</li>
+</ul>
+
+<div class="container">
+    <div class="row">
+        <div class="col">
+            <div class="card" style="width: 14rem;">
+                <img src="/images/html-css.jpeg" alt="HTML & CSS" style="width: 100%; height: 200px;" />
+                <div class="card-body">
+                    <h5 class="card-title">HTML & CSS</h5>
+                    <h6 class="card-subtitle mb-2 text-muted">בניית דף אינטרנט</h6>
+                    <p class="card-text">איך לבנות דף אינטרנט בעזרת HTML התחל לבנות דפים לאתר שלך</p>
+                    <a href="/html-page" class="btn btn-primary btn-lg active" role="button" aria-pressed="true" style="background-color: green;">המשך </a>
+                </div>
+            </div>
+        </div>
+        <div class="col">
+            <div class="card" style="width: 14rem;">
+                <img src="/images/bootstrap.jpeg" style="width: 100%; height: 200px;" />
+                <div class="card-body">
+                    <h5 class="card-title">Bootstrap <br/></h5>
+                    <h6 class="card-subtitle mb-2 text-muted">Bootstrap עיצוב בעזרת  <br /> </h6>
+                    <p class="card-text">עוד על עיצוב האתר בעזרת Bootstrap  </p>
+                    <br />
+                    <a href="#" class="btn btn-primary btn-lg active" role="button" aria-pressed="true" style="background-color: green;">בקרוב</a>
+                </div>
+            </div>
+        </div>
+        <div class="col">
+            <div class="col">
+                <div class="card" style="width: 14rem;">
+                    <img src="/images/sqlite.png" style="width: 100%; height: 200px;" />
+                    <div class="card-body">
+                        <h5 class="card-title">בסיסי נתונים</h5>
+                        <h6 class="card-subtitle mb-2 text-muted">הוספת בסיס נתונים לפרויקט </h6>
+                        <p class="card-text">בסיס נתונים לשמירת מידע טבלאי בעזרת SQLite</p>
+                        <br />
+                        <a href="/SQLite-page" class="btn btn-primary btn-lg active" role="button" aria-pressed="true" style="background-color: green;">המשך</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col">
+            <div class="col">
+                <div class="card" style="width: 14rem;">
+                    <img src="/images/microsoftblazor.png" style="width: 100%; height: 200px;" />
+                    <div class="card-body">
+                        <h5 class="card-title">Blazor</h5>
+                        <h6 class="card-subtitle mb-2 text-muted"> Blazor Web App <br /><br /> </h6>
+                        <p class="card-text">שימוש בדפי Razor <br /> בניית אתר בעזרת Blazor</p>
+                        <br />
+                        <a href="/blazor-page" class="btn btn-primary btn-lg active" role="button" aria-pressed="true" style="background-color: green;">המשך</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+@code {
+    private void RedirectToLogin()
+    {
+        Navigation.NavigateTo("/login");
+    }
+}

@@ -1,0 +1,109 @@
+﻿@page "/connect-lesson"
+@namespace ForYod.Components.Pages.SQLite_DB
+@using ForYod.Components
+
+@* הגדרת סגנון לעמוד RTL *@
+<style>
+    code {
+        direction: ltr;
+        text-align: left;
+        unicode-bidi: embed;
+        display: block;
+        background-color: #f0f0f0; /* צבע רקע אפור */
+        padding: 10px; /* מוסיף קצת רווח פנימי */
+        border-radius: 5px; /* פינות מעוגלות */
+    }
+
+    pre {
+        direction: rtl;
+        text-align: right;
+        unicode-bidi: embed;
+    }
+</style>
+<h4>שלב 1: יצירת מחלקת המודל</h4>
+<pre>
+כדי להתחיל לעבוד עם בסיס הנתונים נצטרך ליצור מחלקה שתייצג את הנתונים שנרצה לשמור בבסיס הנתונים.
+במקרה שלנו נרצה לשמור נתונים על עובדים, ולכן ניצור מחלקה בשם Employee שתכיל את הנתונים הבאים:
+
+ניצור תיקיה בשם Data
+ניצור קובץ בשם Employee.cs בתיקיית Data עם התוכן הבא:
+בבסיס הנתונים נמלא את הנתונים כדי שנוכל לקרוא את המידע
+</pre>
+
+<pre><code>
+namespace ForYod.Model
+{
+    public class Employee
+    {
+        public int ID { get; set; }
+        public string FirstName { get; set; }
+        public string LastName { get; set; }
+        public string EmailAddress { get; set; }
+        public string Department { get; set; }
+    }
+}
+</code></pre>
+
+<h4>שלב 3: רישום השירותים ב-Dependency Injection</h4>
+<pre>
+נוסיף את הקונטקסט של Entity Framework לשירותי התלות של הפרויקט.
+
+פתח את הקובץ Program.cs והוסף את הקוד הבא:
+</pre>
+
+<pre>
+    <code>
+using Microsoft.EntityFrameworkCore;
+using ForYod.Data;
+
+var builder = WebApplication.CreateBuilder(args);
+
+// Add services to the container.
+builder.Services.AddRazorPages();
+builder.Services.AddServerSideBlazor();
+
+// Register the DbContext with the SQLite connection string
+builder.Services.AddDbContext <code> <AppDbContext> </AppDbContext></code>(options =>
+    options.UseSqlite(builder.Configuration.GetConnectionString("DefaultConnection")));
+
+var app = builder.Build();
+
+// Configure the HTTP request pipeline.
+if (!app.Environment.IsDevelopment())
+{
+    app.UseExceptionHandler("/Error");
+    app.UseHsts();
+}
+
+app.UseHttpsRedirection();
+app.UseStaticFiles();
+app.UseRouting();
+
+app.MapBlazorHub();
+app.MapFallbackToPage("/_Host");
+
+app.Run();
+</code>
+</pre>
+
+<h4>שלב 4: הגדרת מחרוזת החיבור</h4>
+<pre>
+נוסיף את מחרוזת החיבור ל-SQLite בקובץ appsettings.json.
+
+פתח את הקובץ appsettings.json והוסף את התוכן הבא:
+</pre>
+
+<pre><code>
+{
+  "ConnectionStrings": {
+    "DefaultConnection": "Data Source=Employees.db"
+  },
+  "Logging": {
+    "LogLevel": {
+      "Default": "Information",
+      "Microsoft.AspNetCore": "Warning"
+    }
+  },
+  "AllowedHosts": "*"
+}
+</code></pre>
