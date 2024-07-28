@@ -1,0 +1,94 @@
+﻿@page "/add-to-Table"
+@namespace ForYod.Components.Pages.SQLite_DB
+@using ForYod.Components
+
+
+@* הגדרת סגנון לעמוד RTL *@
+<style>
+    code {
+        direction: ltr;
+        text-align: left;
+        unicode-bidi: embed;
+        display: block;
+        background-color: #f0f0f0; /* צבע רקע אפור */
+        padding: 10px; /* מוסיף קצת רווח פנימי */
+        border-radius: 5px; /* פינות מעוגלות */
+    }
+
+    pre {
+        direction: rtl;
+        text-align: right;
+        unicode-bidi: embed;
+    }
+</style>
+
+
+<h1>הוספת נתונים לטבלה בבסיס הנתונים</h1>
+
+
+<h4 style="text-decoration: underline;">להוספת נתונים לטבלה בעזרת סקריפט</h4>
+<pre>
+
+נוסיף מספר רשומות לטבלה:
+
+את הקוד נריץ בתוך הכלי לניהול SQLite
+<code>
+INSERT INTO employees (FirstName, LastName, EmailAddress, Department) 
+VALUES ('John', 'Doe', 'john.doe@example.com', 'IT');
+INSERT INTO employees (FirstName, LastName, EmailAddress, Department) 
+VALUES ('Jane', 'Smith', 'jane.smith@example.com', 'HR');
+INSERT INTO employees (FirstName, LastName, EmailAddress, Department) 
+VALUES ('Emily', 'Davis', 'emily.davis@example.com', 'Design');
+
+);
+</code>
+
+
+
+</pre>
+<br />
+<br />
+
+<h4 style="text-decoration: underline;">
+    להוספת נתונים לטבלה בעזרת DB Browser של SQ
+    Lite
+</h4>
+
+<br/>
+<br />
+<h4> שלב 1: פתיחת קובץ ה-SQLite</h4>
+<pre>
+
+
+פתח את DB Browser for SQLite.
+לחץ על "Open Database" ובחר את קובץ ה-SQLite שבו נמצאת הטבלה employees.
+</pre>
+
+<h4> שלב 2: בדיקת הטבלה</h4>
+<pre>
+
+לחץ על הלשונית "Browse Data".
+בתפריט הנפתח, בחר את הטבלה employees.
+</pre>
+<h4> שלב 3: הוספת רשומה חדשה </h4>
+<pre>
+לחץ על הכפתור "New Record" בתחתית החלון.
+טופס הוספת הנתונים יופיע עם שדות הטבלה.
+
+</pre>
+<h4> שלב 4: הזנת הנתונים</h4>
+<pre>
+הכנס את הפרטים בשדות המתאימים:
+
+FirstName: John
+LastName: Doe
+EmailAddress: john.doe@example.com
+Department: IT
+חזור על פעולה זו עבור כל רשומה שתרצה להוסיף.
+
+</pre>
+<h4>שלב 5: שמירת השינויים </h4>
+<pre>
+לאחר שהכנסת את כל הנתונים, לחץ על הכפתור "Write Changes" בחלק העליון של החלון כדי לשמור את השינויים במסד הנתונים.
+
+</pre>

@@ -1,0 +1,100 @@
+﻿@page "/"
+@using ForYod.Components
+@using Microsoft.AspNetCore.Components.Web
+
+
+<PageTitle>דף הבית</PageTitle>
+@* כיוון מימין לשמאל ב-CSS *@
+<style>
+    body {
+        direction: rtl;
+    }
+</style>
+<h1>אתר בנושא תכנות באינטרנט</h1>
+
+ברוכים הבאים לאתר קורס תכנות באינטרנט לכיתה יוד
+<br/>
+באתר זה נלמד לבנות אתר הכולל מסד נתונים
+
+<br />
+האתר יכלול שיעורים במטרה ללמוד כיצד לבנות את הפרויקט שלכם וכיצד להגישו
+<h2>נושאי הלימוד</h2>
+
+
+<ul>
+    <li>מבוא</li>
+    <li>HTML & CSS</li>
+    <li>Bootstrap</li>
+    <li>בסיסי נתונים</li>
+    <li> Blazor בניית אתר בעזרת</li>
+    <li>בניית הפרויקט</li>
+    <li> פרק בונוס - שרתי אזורה</li>
+</ul>
+
+<div class="container">
+    <div class="row">
+        <div class="col">
+            <div class="card" style="width: 14rem;">
+                <img src="/images/html-css.jpeg" alt="HTML & CSS" style="width: 100%; height: 200px;" />
+                <div class="card-body">
+                    <h5 class="card-title">HTML & CSS</h5>
+                    <h6 class="card-subtitle mb-2 text-muted">בניית דף אינטרנט</h6>
+                    <p class="card-text">   איך לבנות דף אינטרנט בעזרת  HTML התחל לבנות דפים לאתר שלך </p>
+                    <a href="/html-page" class="btn btn-primary btn-lg active" role="button" aria-pressed="true" style="background-color: green;">המשך </a>
+                </div>
+            </div>
+        </div>
+        <div class="col">
+            <div class="card" style="width: 14rem;">
+                <img src="/images/bootstrap.jpeg" style="width: 100%; height: 200px;" />
+
+                <div class="card-body">
+                    <h5 class="card-title">Bootstrap</h5>
+                    <h6 class="card-subtitle mb-2 text-muted">Bootstrap <br /> </h6>
+                    <p class="card-text">  <br /> עוד על עיצוב האתר בעזרת Bootstrap </p>
+                    <a href="#" class="btn btn-primary btn-lg ative" role="button" aria-pressed="true" style="background-color: green;">בקרוב</a>
+                </div>
+            </div>
+        </div>
+        <div class="col">
+            <div class="col">
+                <div class="card" style="width: 14rem;">
+                    <img src="/images/sqlite.png" style="width: 100%; height: 200px;" />
+                    <div class="card-body">
+                        <h5 class="card-title">בסיסי נתונים</h5>
+                        <h6 class="card-subtitle mb-2 text-muted">הוספת בסיס נתונים לפרויקט <br /> </h6>
+                        <p class="card-text">  <br /> בסיס נתונים לשמירת מידע טבלאי בעזרת SQLite </p>
+                        <a href="/SQLite-page" class="btn btn-primary btn-lg active" role="button" aria-pressed="true" style="background-color: green;">המשך</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col">
+            <div class="col">
+                <div class="card" style="width: 14rem;">
+                    <img src="/images/microsoftblazor.png" style="width: 100%; height: 200px;" />
+                    <div class="card-body">
+                        <h5 class="card-title">Blazor</h5>
+                        <h6 class="card-subtitle mb-2 text-muted">  <br /> Blazor Web App <br /> </h6>
+                        <p class="card-text">שימוש בדפי Razor  <br /> בניית אתר בעזרת Blazor </p>
+                        <a href="#" class="btn btn-primary btn-lg active" role="button" aria-pressed="true" style="background-color: green;">בקרוב</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col">
+            <div class="col">
+                <div class="card" style="width: 14rem;">
+                    <div class="card-body">
+                        <h5 class="card-title">נושא 5</h5>
+                        <h6 class="card-subtitle mb-2 text-muted">CSS & Bootstrap <br /> </h6>
+                        <p class="card-text">  <br />  לעיצוב מתקדם CSS    הוסף לדפים שלך שלך </p>
+                        <a href="#" class="btn btn-primary btn-lg active" role="button" aria-pressed="true" style="background-color: green;">בקרוב</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+  

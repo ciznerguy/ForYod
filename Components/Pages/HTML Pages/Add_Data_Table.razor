@@ -1,0 +1,47 @@
+﻿@page "/add-data"
+@namespace ForYod.Components.Pages.SQLite_DB
+
+@* הגדרת סגנון לעמוד RTL *@
+<style>
+    code {
+        direction: ltr;
+        text-align: left;
+        unicode-bidi: embed;
+        display: block;
+        background-color: #f0f0f0; /* צבע רקע אפור */
+        padding: 10px; /* מוסיף קצת רווח פנימי */
+        border-radius: 5px; /* פינות מעוגלות */
+    }
+
+    pre {
+        direction: rtl;
+        text-align: right;
+        unicode-bidi: embed;
+    }
+</style>
+
+<h1>הוספת נתונים לטבלה</h1>
+<h4>הוספת משתמשים</h4>
+<pre>
+    יצור סקריפט שמוסיף 15 משתמשים עם נתונים
+    ניתן להוסיף ידנית לטבלה או להשתמש בסקריפט שניתן להוסיף לקוד של האפליקציה
+<code>
+INSERT INTO Users (Username, Email, Password) VALUES
+('משתמש1', 'user1@example.com', 'password1'),
+('משתמש2', 'user2@example.com', 'password2'),
+('משתמש3', 'user3@example.com', 'password3'),
+('משתמש4', 'user4@example.com', 'password4'),
+('משתמש5', 'user5@example.com', 'password5'),
+('משתמש6', 'user6@example.com', 'password6'),
+('משתמש7', 'user7@example.com', 'password7'),
+('משתמש8', 'user8@example.com', 'password8'),
+('משתמש9', 'user9@example.com', 'password9'),
+('משתמש10', 'user10@example.com', 'password10'),
+('משתמש11', 'user11@example.com', 'password11'),
+('משתמש12', 'user12@example.com', 'password12'),
+('משתמש13', 'user13@example.com', 'password13'),
+('משתמש14', 'user14@example.com', 'password14'),
+('משתמש15', 'user15@example.com', 'password15');
+
+</code>
+</pre>

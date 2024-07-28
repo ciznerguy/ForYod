@@ -1,0 +1,171 @@
+﻿@page "/html-page"
+@layout ForYod.Components.Layout.EmptyLayout
+@inject NavigationManager Navigation
+@using ForYod.Components.Pages.HTML_Pages
+
+<div class="container">
+    <div class="left-pane">
+        <nav class="menu">
+            <h3>HTML & CSS</h3>
+            <ul>
+                <li><button @onclick='() => SelectMenuItem("First")' class="menu-item">בניית הדף הראשון</button></li>
+                <li><button @onclick='() => SelectMenuItem("MoreFirst")' class="menu-item">המשך הדף הראשון</button></li>
+                <li><button @onclick='() => SelectMenuItem("FirstBlazor")' class="menu-item">פרויקט בלייזר ראשון</button></li>
+                <li><button @onclick='() => SelectMenuItem("HTMLToBlazor")' class="menu-item">הוספת דף HTML לפרויקט</button></li>
+                <li><button @onclick='() => SelectMenuItem("Tables")' class="menu-item">Tables</button></li>
+                <li><button @onclick='() => SelectMenuItem("Forms")' class="menu-item">Forms</button></li>
+                <li><button @onclick='() => SelectMenuItem("Lists and Bars")' class="menu-item">Lists and Bars</button></li>
+            </ul>
+        </nav>
+        <button class="floating-button" style="width: 200px; height: 50px;" @onclick="NavigateToMainPage">חזרה לדף ראשי</button>
+    </div>
+    <div class="right-pane">
+        
+        @if (selectedMenuItem == "First")
+        {
+            <HTML_Lesson1 />
+        }
+        else if (selectedMenuItem == "MoreFirst")
+        {
+            <HTML_Lesson2 />
+        }
+        else if (selectedMenuItem == "FirstBlazor")
+        {
+            <My_First_Blazor />
+        }
+
+        else if (selectedMenuItem == "HTMLToBlazor")
+                {
+            <HTML_To_Blazor />
+        }
+        else if (selectedMenuItem == "Tables")
+        {
+            <p>Content for tables</p>
+        }
+        else if (selectedMenuItem == "Forms")
+        {
+            <p>Content for Forms</p>
+        }
+        else if (selectedMenuItem == "Lists and Bars")
+        {
+            <p>Content for Lists and Bars</p>
+        }
+        else if (selectedMenuItem == "HTML to ASP.net web Pages")
+        {
+            <p>Content for HTML to ASP.net web Pages</p>
+        }
+  
+    </div>
+</div>
+
+<style>
+
+
+    body {
+        font-family: Arial, sans-serif;
+        font-size: 18px;
+    }
+    html, body {
+        height: 100%;
+        margin: 0;
+        padding: 0;
+        direction: rtl;
+        text-align: right;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .container {
+        display: flex;
+        flex: 1;
+        margin: 0;
+        padding: 0;
+    }
+
+    .left-pane {
+        width: 20%; /* 1/5 of the container */
+        border-left: 2px solid black; /* Vertical line between parts */
+        padding: 10px;
+        display: flex;
+        flex-direction: column;
+        min-height: 100vh; /* Ensure the left-pane takes the full height */
+    }
+
+    .right-pane {
+        width: 80%; /* 4/5 of the container */
+        padding: 10px;
+        min-height: 100vh; /* Ensure the right-pane takes the full height */
+    }
+
+    .menu {
+        font-family: Arial, sans-serif;
+    }
+
+        .menu h3 {
+            margin-top: 0;
+        }
+
+        .menu ul {
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+        }
+
+            .menu ul li {
+                margin: 5px 0;
+            }
+
+    .menu-item {
+        text-decoration: none;
+        color: black;
+        display: block;
+        padding: 8px 16px;
+        background: none;
+        border: none;
+        text-align: right; /* Change to right */
+        cursor: pointer;
+        width: 100%;
+    }
+
+        .menu-item:hover {
+            background-color: #f0f0f0;
+        }
+
+        .menu-item:active, .menu-item:focus {
+            background-color: #007bff;
+            color: white;
+        }
+
+    .floating-button {
+        position: absolute;
+        bottom: 20px;
+        right: 20px;
+        background-color: darkolivegreen;
+        color: white;
+        border: none;
+        padding: 10px 20px;
+        border-radius: 5px;
+        cursor: pointer;
+        font-size: 16px;
+        width: 200px; /* Ensure width is 200px */
+        height: 50px; /* Ensure height is 50px */
+    }
+
+        .floating-button:hover {
+            background-color: #0056b3;
+        }
+</style>
+
+@code {
+    private string selectedMenuItem = "Intro";
+
+    private void SelectMenuItem(string menuItem)
+    {
+        selectedMenuItem = menuItem;
+    }
+
+    private void NavigateToMainPage()
+    {
+        Navigation.NavigateTo("/");
+    }
+}

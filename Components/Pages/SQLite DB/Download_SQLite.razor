@@ -1,0 +1,78 @@
+﻿@page "/SQLite-lesson1"
+@namespace ForYod.Components.Pages.SQLite_DB
+@using ForYod.Components
+
+
+@* הגדרת סגנון לעמוד RTL *@
+<style>
+    body {
+        direction: rtl;
+        text-align: right;
+    }
+
+    pre, code {
+        direction: rtl;
+        text-align: right;
+        unicode-bidi: embed; /* הוספת שורה זו */
+    }
+
+    h1 {
+        text-align: center;
+        border-bottom: 2px solid black;
+    }
+
+    h4 {
+        margin-top: 20px;
+    }
+
+    pre, code {
+        direction: rtl;
+        text-align: right;
+        unicode-bidi: embed;
+    }
+
+    pre, code {
+        direction: rtl;
+        text-align: right;
+        unicode-bidi: embed;
+    }
+
+
+</style>
+
+<h1>תוכנה לניהול בסיסי נתונים</h1>
+<h4>שלב 1: הורדת SQLite Browser</h4>
+<pre>
+
+    יש להוריד את הגירסה המתאימה למחשב 
+    <a href="https://sqlitebrowser.org/dl/">להורדה</a>
+</pre>
+
+<h4>שלב 2: פתיחת SQLite Browser</h4>
+<pre>
+יש לפתוח את התוכנה DB Browser for SQLite שהתקנת.
+</pre>
+<h4>שלב 3: יצירת בסיס נתונים חדש</h4>
+<pre>
+תפריט העליון, לחץ על New Database.
+בחר את המיקום שבו ברצונך לשמור את קובץ בסיס הנתונים והזן שם לקובץ (למשל, eployee.db).
+לחץ על Save.
+ניתן לשמור את מסד הנתונים היישר לספריית הפרויקט
+</pre>
+
+
+
+<h4>    SQLite הוספת חבילת ה-NuGet</h4>
+
+
+<pre>
+    חזור לויזואל סטודיו
+    לחץ על התפריט העליון "Tools" ולאחר מכן בחר "NuGet Package Manager" ו-"Manage NuGet Packages for Solution".
+    בחלון שנפתח, עבור ללשונית "Browse" וחפש את. 
+    בחר את החבילה "Microsoft.Data.Sqlite" ולחץ על כפתור "Install" כדי להתקין אותה בפרויקט שלך.
+    בחר את החבילה "Microsoft.EntityFrameworkCore.Sqlite" ולחץ על כפתור "Install" כדי להתקין אותה בפרויקט שלך.
+  </pre>    
+
+
+
+
