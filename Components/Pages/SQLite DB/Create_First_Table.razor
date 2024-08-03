@@ -26,7 +26,11 @@
 <pre>
 לחץ על הכרטיסייה Structure.
 לחץ על Create Table.
+<<<<<<< HEAD
 בחלון שנפתח, הזן שם לטבלה (למשל, employess).
+=======
+בחלון שנפתח, הזן שם לטבלה (למשל, users).
+>>>>>>> 230d044b6afcb745ab8d418295da8c43078c0935
 הוסף עמודות לטבלה על ידי הזנת השם והסוג של כל עמודה. לדוגמה:
 id עם סוג INTEGER ותיוג כ-Primary Key.
 name עם סוג TEXT.
@@ -41,6 +45,7 @@ email עם סוג TEXT ותיוג כ-Unique.
 ייפתח חלון חדש לעריכת קוד ה-SQL.
 כתוב את סקריפט ה-SQL שלך בחלון העריכה. לדוגמה, אם תרצה ליצור טבלת סטודנטים:
 <code>
+<<<<<<< HEAD
 CREATE TABLE employees (
     Id INTEGER PRIMARY KEY AUTOINCREMENT,
     FirstName TEXT NOT NULL,
@@ -48,6 +53,13 @@ CREATE TABLE employees (
     Email TEXT NOT NULL UNIQUE,
     Department TEXT NOT NULL,
 
+=======
+CREATE TABLE Students (
+    StudentId INTEGER PRIMARY KEY AUTOINCREMENT,
+    Name TEXT NOT NULL,
+    Age INTEGER,
+    EnrollmentDate DATE
+>>>>>>> 230d044b6afcb745ab8d418295da8c43078c0935
 );
 </code>
 </pre>
