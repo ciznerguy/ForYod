@@ -2,6 +2,7 @@
 @using ForYod.Model
 @using Microsoft.EntityFrameworkCore
 @inject AppDbContext DbContext
+@inject ForYod.Components.Services.UserService UserService
 
 <h3>Employee List</h3>
 
@@ -24,6 +25,7 @@ else
                     <th>Last Name</th>
                     <th>Email Address</th>
                     <th>Department</th>
+                    <th>Actions</th>
                 </tr>
             </thead>
             <tbody>
@@ -31,10 +33,34 @@ else
                 {
                     <tr>
                         <td>@employee.ID</td>
-                        <td>@employee.FirstName</td>
-                        <td>@employee.LastName</td>
-                        <td>@employee.EmailAddress</td>
-                        <td>@employee.Department</td>
+                        @if (isEditing && selectedEmployee?.ID == employee.ID)
+                        {
+                            <td><InputText class="form-control" @bind-Value="selectedEmployee.FirstName" /></td>
+                            <td><InputText class="form-control" @bind-Value="selectedEmployee.LastName" /></td>
+                            <td><InputText class="form-control" @bind-Value="selectedEmployee.EmailAddress" /></td>
+                            <td><InputText class="form-control" @bind-Value="selectedEmployee.Department" /></td>
+                            <td>
+                                @if (UserService.IsAuthenticated)
+                                {
+                                    <button class="btn btn-primary" @onclick="SaveEmployee">Save</button>
+                                    <button class="btn btn-secondary" @onclick="CancelEdit">Cancel</button>
+                                }
+                            </td>
+                        }
+                        else
+                        {
+                            <td>@employee.FirstName</td>
+                            <td>@employee.LastName</td>
+                            <td>@employee.EmailAddress</td>
+                            <td>@employee.Department</td>
+                            <td>
+                                @if (UserService.IsAuthenticated)
+                                {
+                                    <button class="btn btn-danger" @onclick="() => DeleteEmployee(employee.ID)">Delete</button>
+                                    <button class="btn btn-primary" @onclick="@(async () => await EditEmployee(employee.ID))">Edit</button>
+                                }
+                            </td>
+                        }
                     </tr>
                 }
             </tbody>
@@ -43,8 +69,10 @@ else
 }
 
 @code {
-    private List<Employee> ?employees;
-    private string ?errorMessage;
+    private List<Employee>? employees;
+    private string? errorMessage;
+    private Employee? selectedEmployee;
+    private bool isEditing;
 
     protected override async Task OnInitializedAsync()
     {
@@ -57,5 +85,60 @@ else
             errorMessage = ex.Message;
             Console.WriteLine(ex.ToString());
         }
+    }
+
+    private async Task DeleteEmployee(int id)
+    {
+        try
+        {
+            var employee = await DbContext.Employees.FindAsync(id);
+            if (employee != null)
+            {
+                DbContext.Employees.Remove(employee);
+                await DbContext.SaveChangesAsync();
+
+                employees = await DbContext.Employees.ToListAsync();
+            }
+        }
+        catch (Exception ex)
+        {
+            errorMessage = ex.Message;
+            Console.WriteLine(ex.ToString());
+        }
+    }
+
+    private async Task EditEmployee(int id)
+    {
+        selectedEmployee = employees?.FirstOrDefault(e => e.ID == id);
+        if (selectedEmployee != null)
+        {
+            isEditing = true;
+            await InvokeAsync(StateHasChanged); // Ensure the component re-renders
+        }
+    }
+
+    private async Task SaveEmployee()
+    {
+        if (selectedEmployee != null)
+        {
+            try
+            {
+                DbContext.Employees.Update(selectedEmployee);
+                await DbContext.SaveChangesAsync();
+                employees = await DbContext.Employees.ToListAsync();
+                isEditing = false;
+            }
+            catch (Exception ex)
+            {
+                errorMessage = ex.Message;
+                Console.WriteLine(ex.ToString());
+            }
+        }
+    }
+
+    private void CancelEdit()
+    {
+        isEditing = false;
+        selectedEmployee = null;
     }
 }

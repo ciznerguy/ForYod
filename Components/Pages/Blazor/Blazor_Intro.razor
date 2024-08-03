@@ -1,0 +1,145 @@
+﻿@page "/blazor-introduction"
+@inject NavigationManager Navigation
+
+<div dir="rtl" style="text-align: right;">
+    <br />
+    <h1 style="font-size: 45px; text-align: center;">מבוא לטכנולוגיית <code style="font-size: 45px;">Blazor</code></h1>
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+
+    <!-- התחלת אקורדיון -->
+    <div class="accordion" id="blazorAccordion">
+
+        <!-- פרק ראשון -->
+        <div class="accordion-item">
+            <h2 class="accordion-header" id="headingOne">
+                <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                    הקדמה ל-Blazor
+                </button>
+            </h2>
+            <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#blazorAccordion">
+                <div class="accordion-body">
+                    <pre style="direction: rtl; text-align: right;">
+                    <code>Blazor</code> היא מסגרת פיתוח (<code>framework</code>) שפותחה על ידי מיקרוסופט ומאפשרת יצירת יישומי אינטרנט אינטראקטיביים בשפת <code>C#</code>. 
+ בניגוד לפיתוח מסורתי בדפדפן באמצעות <code>JavaScript</code>, <code>Blazor</code> מאפשרת למפתחים לכתוב קוד צד לקוח (<code>Client-side</code>) וצד שרת (<code>Server-side</code>) 
+ב-<code>C#</code> בלבד.
+                    </pre>
+                </div>
+            </div>
+        </div>
+
+        <!-- פרק שני -->
+        <div class="accordion-item">
+            <h2 class="accordion-header" id="headingTwo">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                    מודלים עיקריים
+                </button>
+            </h2>
+            <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#blazorAccordion">
+                <div class="accordion-body">
+                    <pre style="direction: rtl; text-align: right;">
+                    <code>Blazor</code> מגיעה בשני מודלים עיקריים:
+                    </pre>
+                    <ul>
+                        <li>
+                            <strong><code>Blazor Server</code>:</strong> במודל זה, הקוד מתבצע בצד השרת, והדפדפן מתקשר עם השרת בזמן אמת באמצעות טכנולוגיית <code>SignalR</code> של מיקרוסופט.
+                        </li>
+                        <li>
+                            <strong><code>Blazor WebAssembly</code>:</strong> במודל זה, הקוד מתבצע בדפדפן עצמו באמצעות <code>WebAssembly</code>, מה שמאפשר הרצת קוד <code>C#</code> ישירות במכשיר של המשתמש.
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- פרק שלישי -->
+        <div class="accordion-item">
+            <h2 class="accordion-header" id="headingThree">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                    יתרונות ושימושים עיקריים
+                </button>
+            </h2>
+            <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#blazorAccordion">
+                <div class="accordion-body">
+                    <pre style="direction: rtl; text-align: right;">
+                    - <strong>שפה אחידה:</strong> <code>Blazor</code> מאפשרת למפתחים להשתמש ב-<code>C#</code> לכל חלקי היישום, מה שמקל על תהליך הפיתוח ומפחית את הצורך בשימוש ב-<code>JavaScript</code>.
+                    - <strong>שיתוף קוד:</strong> ניתן לשתף קוד בין צד הלקוח וצד השרת, מה שמפשט את הפיתוח ומוביל לתחזוקה קלה יותר.
+                    - <strong>ביצועים:</strong> בזכות <code>WebAssembly</code>, <code>Blazor WebAssembly</code> מאפשרת הרצת יישומים מורכבים בקליינט עם ביצועים גבוהים.
+                    - <strong>תמיכה רחבה:</strong> <code>Blazor</code> משתלבת באופן טבעי עם <code>ASP.NET Core</code> ויכולה לפעול במגוון דפדפנים וסביבות.
+                    </pre>
+                </div>
+            </div>
+        </div>
+
+        <!-- פרק רביעי -->
+        <div class="accordion-item">
+            <h2 class="accordion-header" id="headingFour">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+                    מטרות הפיתוח של Blazor
+                </button>
+            </h2>
+            <div id="collapseFour" class="accordion-collapse collapse" aria-labelledby="headingFour" data-bs-parent="#blazorAccordion">
+                <div class="accordion-body">
+                    <pre style="direction: rtl; text-align: right;">
+                    <code>Blazor</code> נועדה לאפשר למפתחי <code>.NET</code> ליצור יישומי אינטרנט מודרניים ואינטראקטיביים תוך שימוש בשפה מוכרת ובכלים קיימים.
+                    </pre>
+                </div>
+            </div>
+        </div>
+
+    </div>
+    <!-- סיום אקורדיון -->
+
+    <button class="floating-button" style="width: 200px; height: 50px;" @onclick="NavigateToMainPage">חזרה לדף ראשי</button>
+
+    <button class="floating-button" style="width: 200px; height: 50px; bottom: 100px;" @onclick="NavigateToMore">להמשך מבוא</button>
+</div>
+
+@code {
+    private void NavigateToMainPage()
+    {
+        Navigation.NavigateTo("/");
+    }
+
+    private void NavigateToMore()
+    {
+        Navigation.NavigateTo("/blazor-intro-more");
+    }
+}
+
+<style>
+    body {
+        font-family: 'Arial', sans-serif;
+        font-size: 18px;
+        color: #000;
+    }
+
+    h1, h2 {
+        font-size: 20px;
+        color: #333;
+    }
+
+    code {
+        font-family: 'Courier New', Courier, monospace;
+        font-size: 18px;
+        color: #000;
+    }
+
+    .floating-button {
+        position: absolute;
+        bottom: 20px;
+        right: 20px;
+        background-color: darkolivegreen;
+        color: white;
+        border: none;
+        padding: 10px 20px;
+        border-radius: 5px;
+        cursor: pointer;
+        font-size: 16px;
+        width: 200px;
+        height: 50px;
+    }
+</style>

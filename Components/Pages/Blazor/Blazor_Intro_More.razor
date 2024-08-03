@@ -1,0 +1,163 @@
+﻿@page "/blazor-intro-more"
+@inject NavigationManager Navigation
+
+<div dir="rtl" style="text-align: right;">
+    <br />
+    <h1 style="font-size: 45px; text-align: center;">חלקי פרויקט בלייזר  </h1>
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+
+    <!-- התחלת אקורדיון -->
+    <div class="accordion" id="blazorAccordion">
+
+        <!-- סעיף Dependencies -->
+        <div class="accordion-item">
+            <h2 class="accordion-header" id="headingOne">
+                <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                    Dependencies (תלויות)
+                </button>
+            </h2>
+            <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#blazorAccordion">
+                <div class="accordion-body">
+                    תיקיית Dependencies כוללת את כל חבילות ה-NuGet והפרויקטים שמערכת תלויה בהם. זה כולל את הספריות החיצוניות והפנימיות הדרושות לפרויקט שלך.
+                </div>
+            </div>
+        </div>
+
+        <!-- סעיף wwwroot -->
+        <div class="accordion-item">
+            <h2 class="accordion-header" id="headingTwo">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                    wwwroot
+                </button>
+            </h2>
+            <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#blazorAccordion">
+                <div class="accordion-body">
+                    תיקיית wwwroot משמשת לאחסון קבצים סטטיים כגון CSS, JavaScript, תמונות וקבצי מדיה אחרים שנגישים מהדפדפן. בפרויקט זה, ניתן לראות שם את:
+                    <ul>
+                        <li><strong>bootstrap.min.css:</strong> קובץ CSS של Bootstrap.</li>
+                        <li><strong>app.css:</strong> קובץ CSS מותאם אישית ליישום.</li>
+                        <li><strong>favicon.png:</strong> סמל האתר המופיע בלשונית הדפדפן.</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- סעיף Components -->
+        <div class="accordion-item">
+            <h2 class="accordion-header" id="headingThree">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                    Components
+                </button>
+            </h2>
+            <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#blazorAccordion">
+                <div class="accordion-body">
+                    תיקיית Components כוללת את הרכיבים של ה-Blazor. רכיבים הם חלקי קוד עצמאיים שיכולים להיות בשימוש חוזר ביישום.
+                    <ul>
+                        <li><strong>Layout:</strong> תיקיית משנה ליצירת רכיבי תבניות עיצוב (layouts), המספקים מבנה דפי אינטרנט.</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- סעיף Pages -->
+        <div class="accordion-item">
+            <h2 class="accordion-header" id="headingFour">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+                    Pages
+                </button>
+            </h2>
+            <div id="collapseFour" class="accordion-collapse collapse" aria-labelledby="headingFour" data-bs-parent="#blazorAccordion">
+                <div class="accordion-body">
+                    תיקיית Pages כוללת את כל דפי ה-Razor של ה-Blazor. דפים אלה מוגדרים באמצעות קבצי .razor.
+                    <ul>
+                        <li><strong>Counter.razor:</strong> דף דוגמה שמכיל דוגמת קוד להוספת/הורדת מספר בלחיצת כפתור.</li>
+                        <li><strong>Error.razor:</strong> דף שמטפל בשגיאות גלובליות המתרחשות בפרויקט.</li>
+                        <li><strong>Home.razor:</strong> דף הבית של היישום.</li>
+                        <li><strong>Weather.razor:</strong> דף להצגת תחזית מזג האוויר, שיכול להוות דוגמה לקריאת API.</li>
+                        <li><strong>_Imports.razor:</strong> קובץ זה כולל using statements שמוחלים באופן גלובלי על כל הקבצים בתיקיית Pages.</li>
+                        <li><strong>App.razor:</strong> הקובץ הראשי של היישום שמנהל את הניווט (routing) ואת הגדרת הרכיבים הבסיסיים.</li>
+                        <li><strong>Routes.razor:</strong> קובץ שעשוי להכיל את הגדרת ה-Routes לדפים השונים ביישום.</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- סעיף appsettings.json -->
+        <div class="accordion-item">
+            <h2 class="accordion-header" id="headingFive">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFive" aria-expanded="false" aria-controls="collapseFive">
+                    appsettings.json
+                </button>
+            </h2>
+            <div id="collapseFive" class="accordion-collapse collapse" aria-labelledby="headingFive" data-bs-parent="#blazorAccordion">
+                <div class="accordion-body">
+                    קובץ תצורה זה מכיל הגדרות כמו מחרוזות חיבור למסדי נתונים, פרמטרים מותאמים אישית וכו'. ניתן לערוך אותו בהתאם לצרכי היישום.
+                </div>
+            </div>
+        </div>
+
+        <!-- סעיף Program.cs -->
+        <div class="accordion-item">
+            <h2 class="accordion-header" id="headingSix">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSix" aria-expanded="false" aria-controls="collapseSix">
+                    Program.cs
+                </button>
+            </h2>
+            <div id="collapseSix" class="accordion-collapse collapse" aria-labelledby="headingSix" data-bs-parent="#blazorAccordion">
+                <div class="accordion-body">
+                    קובץ זה משמש לנקודת ההתחלה של היישום. הוא מגדיר את ה-Host, את השירותים (services) הנדרשים ל-Blazor Server, ומפעיל את היישום.
+                </div>
+            </div>
+        </div>
+
+    </div>
+    <!-- סיום אקורדיון -->
+    <button class="floating-button" style="width: 200px; height: 50px;" @onclick="NavigateToMainPage">חזרה לדף ראשי</button>
+
+</div>
+
+@code {
+    private void NavigateToMainPage()
+    {
+        Navigation.NavigateTo("/");
+    }
+
+ }
+<style>
+    body {
+        font-family: 'Arial', sans-serif;
+        font-size: 18px;
+        color: #000;
+    }
+
+    h1, h2 {
+        font-size: 20px;
+        color: #333;
+    }
+
+    code {
+        font-family: 'Courier New', Courier, monospace;
+        font-size: 18px;
+        color: #000;
+    }
+
+    .floating-button {
+        position: absolute;
+        bottom: 20px;
+        right: 20px;
+        background-color: darkolivegreen;
+        color: white;
+        border: none;
+        padding: 10px 20px;
+        border-radius: 5px;
+        cursor: pointer;
+        font-size: 16px;
+        width: 200px;
+        height: 50px;
+    }
+</style>
+
