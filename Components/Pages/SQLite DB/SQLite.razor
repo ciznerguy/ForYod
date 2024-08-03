@@ -1,14 +1,21 @@
 ﻿@page "/SQLite-page"
 @layout ForYod.Components.Layout.EmptyLayout
+@inherits ForYod.Components.BaseComponent
 @inject NavigationManager Navigation
 @using ForYod.Components.Pages.SQLite_DB
 
-<<<<<<< HEAD
-<div class="top-pane">
-    <button class="login-button" @onclick="NavigateToLoginPage">Login</button>
+<div class="top-left">
+    @if (UserFullName == "not")
+    {
+        <p>not logged</p>
+    }
+    else
+    {
+        <p>שלום, @UserFullName!</p>
+    }
 </div>
-=======
->>>>>>> 230d044b6afcb745ab8d418295da8c43078c0935
+
+
 
 <div class="container">
     <div class="left-pane">
@@ -18,8 +25,7 @@
                 <li><button @onclick='() => SelectMenuItem("Download")' class="menu-item">הורד SQLite </button></li>
                 <li><button @onclick='() => SelectMenuItem("AddFirstTable")' class="menu-item">הוספת טבלה ראשונה</button></li>
                 <li><button @onclick='() => SelectMenuItem("AddData")' class="menu-item">הוספת נתונים לטבלה</button></li>
-<<<<<<< HEAD
-                <li><button @onclick='() => SelectMenuItem("Connect")' class="menu-item"> מדריך חיבור מסד נתונים לפרויקט</button></li>
+                <li><button @onclick='() => SelectMenuItem("Connect")' class="menu-item">מדריך חיבור מסד נתונים לפרויקט</button></li>
                 <li><button @onclick='() => SelectMenuItem("AddConnectToPage")' class="menu-item">חיבור DB לדף</button></li>
                 <li><button @onclick='() => SelectMenuItem("RunSQL")' class="menu-item">קרא מהדאטה בייס</button></li>
                 <li><button @onclick='() => SelectMenuItem("RunSQL2")' class="menu-item">קרא מהדאטה בייס 2</button></li>
@@ -28,42 +34,18 @@
         <button class="floating-button" style="width: 200px; height: 50px;" @onclick="NavigateToMainPage">חזרה לדף ראשי</button>
     </div>
     <div class="right-pane">
-=======
-                 <li><button @onclick='() => SelectMenuItem("Connect")' class="menu-item"> מדריך חיבור מסד נתונים לפרויקט</button></li>
-
-                <li><button @onclick='() => SelectMenuItem("AddConnectToPage")' class="menu-item">חיבור DB לדף</button></li>
-
-                <li><button @onclick='() => SelectMenuItem("RunSQL")' class="menu-item">קרא מהדאטה בייס</button></li>
-                <li><button @onclick='() => SelectMenuItem("RunSQL2")' class="menu-item">קרא מהדאטה בייס 2</button></li>
-
-            </ul>
-        </nav>
-        <button class="floating-button" style="width: 200px; height: 50px;" @onclick="NavigateToMainPage">חזרה לדף ראשי</button>
-</div>
-    <div class="right-pane">
-        
->>>>>>> 230d044b6afcb745ab8d418295da8c43078c0935
         @if (selectedMenuItem == "Download")
         {
             <Download_SQLite />
         }
-<<<<<<< HEAD
         else if (selectedMenuItem == "AddFirstTable")
         {
             <Create_First_Table />
-=======
-  
-
-        else if (selectedMenuItem == "AddFirstTable")
-        {
-           <Create_First_Table />
->>>>>>> 230d044b6afcb745ab8d418295da8c43078c0935
         }
         else if (selectedMenuItem == "AddData")
         {
             <Add_To_Table />
         }
-<<<<<<< HEAD
         else if (selectedMenuItem == "AddConnectToPage")
         {
             <Code_DB_On_Page />
@@ -80,48 +62,23 @@
         {
             <Connect />
         }
-=======
-
-        else if (selectedMenuItem == "  AddConnectToPage")
-        {
-            <Code_DB_On_Page />
-        }
-      
-        else if (selectedMenuItem == "RunSQL")
-        {
-           <Employees />
-        }
-            else if (selectedMenuItem == "RunSQL2")
-            {
-                <EmployeeList />
-            }
-          else if (selectedMenuItem == "Connect")
-        {
-           <Connect/>
-        }
-    
-        
-
-      
-  
->>>>>>> 230d044b6afcb745ab8d418295da8c43078c0935
     </div>
 </div>
 
 <style>
-<<<<<<< HEAD
-=======
+    .top-left {
+        position: fixed;
+        top: 10px;
+        left: 10px;
+        z-index: 1000;
+        text-align: left;
+    }
 
-
->>>>>>> 230d044b6afcb745ab8d418295da8c43078c0935
     body {
         font-family: Arial, sans-serif;
         font-size: 18px;
     }
-<<<<<<< HEAD
 
-=======
->>>>>>> 230d044b6afcb745ab8d418295da8c43078c0935
     html, body {
         height: 100%;
         margin: 0;
@@ -132,7 +89,6 @@
         flex-direction: column;
     }
 
-<<<<<<< HEAD
     .top-pane {
         padding: 10px;
         display: flex;
@@ -141,8 +97,6 @@
         border-bottom: 1px solid #dee2e6;
     }
 
-=======
->>>>>>> 230d044b6afcb745ab8d418295da8c43078c0935
     .container {
         display: flex;
         flex: 1;
@@ -151,7 +105,6 @@
     }
 
     .left-pane {
-<<<<<<< HEAD
         width: 20%;
         border-left: 2px solid black;
         padding: 10px;
@@ -164,20 +117,6 @@
         width: 80%;
         padding: 10px;
         min-height: 100vh;
-=======
-        width: 20%; /* 1/5 of the container */
-        border-left: 2px solid black; /* Vertical line between parts */
-        padding: 10px;
-        display: flex;
-        flex-direction: column;
-        min-height: 100vh; /* Ensure the left-pane takes the full height */
-    }
-
-    .right-pane {
-        width: 80%; /* 4/5 of the container */
-        padding: 10px;
-        min-height: 100vh; /* Ensure the right-pane takes the full height */
->>>>>>> 230d044b6afcb745ab8d418295da8c43078c0935
     }
 
     .menu {
@@ -205,11 +144,7 @@
         padding: 8px 16px;
         background: none;
         border: none;
-<<<<<<< HEAD
         text-align: right;
-=======
-        text-align: right; /* Change to right */
->>>>>>> 230d044b6afcb745ab8d418295da8c43078c0935
         cursor: pointer;
         width: 100%;
     }
@@ -234,43 +169,19 @@
         border-radius: 5px;
         cursor: pointer;
         font-size: 16px;
-<<<<<<< HEAD
         width: 200px;
         height: 50px;
-=======
-        width: 200px; /* Ensure width is 200px */
-        height: 50px; /* Ensure height is 50px */
->>>>>>> 230d044b6afcb745ab8d418295da8c43078c0935
     }
 
         .floating-button:hover {
             background-color: #0056b3;
         }
-<<<<<<< HEAD
 
-    .login-button {
-        background-color: #007bff;
-        color: white;
-        border: none;
-        padding: 10px 20px;
-        border-radius: 5px;
-        cursor: pointer;
-        font-size: 16px;
-    }
 
-        .login-button:hover {
-            background-color: #0056b3;
-        }
 </style>
 
 @code {
     private string selectedMenuItem = "Download";
-=======
-</style>
-
-@code {
-    private string selectedMenuItem = "Intro";
->>>>>>> 230d044b6afcb745ab8d418295da8c43078c0935
 
     private void SelectMenuItem(string menuItem)
     {
@@ -281,12 +192,6 @@
     {
         Navigation.NavigateTo("/");
     }
-<<<<<<< HEAD
 
-    private void NavigateToLoginPage()
-    {
-        Navigation.NavigateTo("/login");
-    }
-=======
->>>>>>> 230d044b6afcb745ab8d418295da8c43078c0935
+  
 }
