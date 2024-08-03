@@ -1,174 +1,159 @@
 ﻿@page "/"
-<<<<<<< HEAD
-@inject ForYod.Components.Services.UserService UserService
-@inject NavigationManager Navigation
 
-<PageTitle>דף הבית</PageTitle>
-
-=======
-@using ForYod.Components
-@using Microsoft.AspNetCore.Components.Web
 
 
 <PageTitle>דף הבית</PageTitle>
 @* כיוון מימין לשמאל ב-CSS *@
->>>>>>> 230d044b6afcb745ab8d418295da8c43078c0935
 <style>
     body {
         direction: rtl;
     }
-<<<<<<< HEAD
-
-    .top-right {
-        position: absolute;
-        top: 10px;
-        right: 10px;
-    }
-</style>
-
-@if (UserService.FullName == "not")
-{
-    <button @onclick="RedirectToLogin" class="btn btn-primary top-right">Login</button>
-}
-else
-{
-    <p class="top-right">ברוך הבא, @UserService.FullName!</p>
-}
-
-<h1>אתר בנושא תכנות באינטרנט</h1>
-
-ברוכים הבאים לאתר קורס "תיכנות בסביבת אינטרנט בשפת #C"
-<br />
-באתר זה נלמד את תכני הקורס הנדרשים ונלמד לבנות אתר הכולל מסד נתונים
-
-<br />
-האתר יכלול שיעורים במטרה ללמוד כיצד לבנות את הפרויקט שלכם וכיצד להגישו
-בסוף הקורס והלמידה יהיה לכם אתר פונקציונלי ומוכן לשימוש
-<h2>נושאי הלימוד</h2>
-
-=======
 </style>
 <h1>אתר בנושא תכנות באינטרנט</h1>
 
 ברוכים הבאים לאתר קורס תכנות באינטרנט לכיתה יוד
-<br/>
+<br />
 באתר זה נלמד לבנות אתר הכולל מסד נתונים
 
 <br />
 האתר יכלול שיעורים במטרה ללמוד כיצד לבנות את הפרויקט שלכם וכיצד להגישו
+בשלב הראשון לפני שנתחיל ללמוד על שאר הנושאים נתחיל בבניית פרויקט בלייזר ראשון
+שבו נשתמש לשאר תהליך הלמידה שלנו
 <h2>נושאי הלימוד</h2>
-
-
->>>>>>> 230d044b6afcb745ab8d418295da8c43078c0935
-<ul>
-    <li>מבוא</li>
-    <li>HTML & CSS</li>
-    <li>Bootstrap</li>
-    <li>בסיסי נתונים</li>
-    <li> Blazor בניית אתר בעזרת</li>
-    <li>בניית הפרויקט</li>
-    <li> פרק בונוס - שרתי אזורה</li>
-</ul>
-
-<div class="container">
-    <div class="row">
-        <div class="col">
-            <div class="card" style="width: 14rem;">
-                <img src="/images/html-css.jpeg" alt="HTML & CSS" style="width: 100%; height: 200px;" />
-                <div class="card-body">
-                    <h5 class="card-title">HTML & CSS</h5>
-                    <h6 class="card-subtitle mb-2 text-muted">בניית דף אינטרנט</h6>
-<<<<<<< HEAD
-                    <p class="card-text">איך לבנות דף אינטרנט בעזרת HTML התחל לבנות דפים לאתר שלך</p>
-=======
-                    <p class="card-text">   איך לבנות דף אינטרנט בעזרת  HTML התחל לבנות דפים לאתר שלך </p>
->>>>>>> 230d044b6afcb745ab8d418295da8c43078c0935
-                    <a href="/html-page" class="btn btn-primary btn-lg active" role="button" aria-pressed="true" style="background-color: green;">המשך </a>
-                </div>
+<div class="accordion" id="accordion">
+    <div class="accordion-item">
+        <h2 class="accordion-header" id="headingOne">
+            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                מבוא
+            </button>
+        </h2>
+        <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#accordion">
+            <div class="accordion-body" style="direction: rtl; text-align: right;">
+                <pre style="direction: rtl; text-align: right;">
+בחלק הזה של האתר נכיר את מטרת הקורס
+נבין מהי הטכנולגיה איתה 
+ונדאג להתקין את התוכנות הנדרשות
+                </pre>
             </div>
         </div>
-        <div class="col">
-            <div class="card" style="width: 14rem;">
-                <img src="/images/bootstrap.jpeg" style="width: 100%; height: 200px;" />
-<<<<<<< HEAD
-                <div class="card-body">
-                    <h5 class="card-title">Bootstrap <br/></h5>
-                    <h6 class="card-subtitle mb-2 text-muted">Bootstrap עיצוב בעזרת  <br /> </h6>
-                    <p class="card-text">עוד על עיצוב האתר בעזרת Bootstrap  </p>
-                    <br />
-                    <a href="#" class="btn btn-primary btn-lg active" role="button" aria-pressed="true" style="background-color: green;">בקרוב</a>
-=======
-
-                <div class="card-body">
-                    <h5 class="card-title">Bootstrap</h5>
-                    <h6 class="card-subtitle mb-2 text-muted">Bootstrap <br /> </h6>
-                    <p class="card-text">  <br /> עוד על עיצוב האתר בעזרת Bootstrap </p>
-                    <a href="#" class="btn btn-primary btn-lg ative" role="button" aria-pressed="true" style="background-color: green;">בקרוב</a>
->>>>>>> 230d044b6afcb745ab8d418295da8c43078c0935
-                </div>
+    </div>
+    <div class="accordion-item">
+        <h2 class="accordion-header" id="headingTwo">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                HTML
+            </button>
+        </h2>
+        <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordion">
+            <div class="accordion-body" style="direction: rtl; text-align: right;">
+                <pre style="direction: rtl; text-align: right;">
+ נכיר את שפת <code>HTML</code> המשמשת אותנו לעיצוב דפי האתר שלנו
+נלמד כיצד לבנות דפי אינטרנט ולהציג תוכן באמצעות <code>HTML</code>
+               </pre>
             </div>
         </div>
-        <div class="col">
-            <div class="col">
-                <div class="card" style="width: 14rem;">
-                    <img src="/images/sqlite.png" style="width: 100%; height: 200px;" />
-                    <div class="card-body">
-                        <h5 class="card-title">בסיסי נתונים</h5>
-<<<<<<< HEAD
-                        <h6 class="card-subtitle mb-2 text-muted">הוספת בסיס נתונים לפרויקט </h6>
-                        <p class="card-text">בסיס נתונים לשמירת מידע טבלאי בעזרת SQLite</p>
-                        <br />
-=======
-                        <h6 class="card-subtitle mb-2 text-muted">הוספת בסיס נתונים לפרויקט <br /> </h6>
-                        <p class="card-text">  <br /> בסיס נתונים לשמירת מידע טבלאי בעזרת SQLite </p>
->>>>>>> 230d044b6afcb745ab8d418295da8c43078c0935
-                        <a href="/SQLite-page" class="btn btn-primary btn-lg active" role="button" aria-pressed="true" style="background-color: green;">המשך</a>
-                    </div>
-                </div>
+    </div>
+    <div class="accordion-item">
+        <h2 class="accordion-header" id="headingThree">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                CSS & Bootstrap
+            </button>
+        </h2>
+        <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#accordion">
+            <div class="accordion-body" style="direction: rtl; text-align: right;">
+                <pre style="direction: rtl; text-align: right;">
+נכיר את <code>CSS</code> המשמשת לעיצוב והצגת האתר
+נלמד איך לעצב את דפי האתר ולהשתמש בכלים מוכנים על ידי שימוש ב <code> Bootstrap</code>
+               </pre>
             </div>
         </div>
-        <div class="col">
-            <div class="col">
-                <div class="card" style="width: 14rem;">
-                    <img src="/images/microsoftblazor.png" style="width: 100%; height: 200px;" />
-                    <div class="card-body">
-                        <h5 class="card-title">Blazor</h5>
-<<<<<<< HEAD
-                        <h6 class="card-subtitle mb-2 text-muted"> Blazor Web App <br /><br /> </h6>
-                        <p class="card-text">שימוש בדפי Razor <br /> בניית אתר בעזרת Blazor</p>
-                        <br />
-                        <a href="/blazor-page" class="btn btn-primary btn-lg active" role="button" aria-pressed="true" style="background-color: green;">המשך</a>
-=======
-                        <h6 class="card-subtitle mb-2 text-muted">  <br /> Blazor Web App <br /> </h6>
-                        <p class="card-text">שימוש בדפי Razor  <br /> בניית אתר בעזרת Blazor </p>
-                        <a href="#" class="btn btn-primary btn-lg active" role="button" aria-pressed="true" style="background-color: green;">בקרוב</a>
-                    </div>
-                </div>
+    </div>
+    <div class="accordion-item">
+        <h2 class="accordion-header" id="headingFour">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+                 Razor 
+            </button>
+        </h2>
+        <div id="collapseFour" class="accordion-collapse collapse" aria-labelledby="headingFour" data-bs-parent="#accordion">
+            <div class="accordion-body" style="direction: rtl; text-align: right;">
+                <pre style="direction: rtl; text-align: right;">
+                    <code>C#</code> המאפשרת לנו להוסיף אינטראקטיביות לאתר
+ נלמד כיצד לשלב קוד C# בדפים שלנו כדי לנהל אירועים 
+ ולהגיב אליהם
+               </pre>
             </div>
         </div>
-        <div class="col">
-            <div class="col">
-                <div class="card" style="width: 14rem;">
-                    <div class="card-body">
-                        <h5 class="card-title">נושא 5</h5>
-                        <h6 class="card-subtitle mb-2 text-muted">CSS & Bootstrap <br /> </h6>
-                        <p class="card-text">  <br />  לעיצוב מתקדם CSS    הוסף לדפים שלך שלך </p>
-                        <a href="#" class="btn btn-primary btn-lg active" role="button" aria-pressed="true" style="background-color: green;">בקרוב</a>
->>>>>>> 230d044b6afcb745ab8d418295da8c43078c0935
-                    </div>
-                </div>
+    </div>
+    <div class="accordion-item">
+        <h2 class="accordion-header" id="headingFive">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFive" aria-expanded="false" aria-controls="collapseFive">
+                סיכום
+            </button>
+        </h2>
+        <div id="collapseFive" class="accordion-collapse collapse" aria-labelledby="headingFive" data-bs-parent="#accordion">
+            <div class="accordion-body" style="direction: rtl; text-align: right;">
+                <pre style="direction: rtl; text-align: right;">
+ נסכם את כל מה שלמדנו במהלך הקורס ונכיר את האתגרים הבאים
+ ונבנה אתר מלא הכולל בסיס נתונים
+               </pre>
             </div>
         </div>
     </div>
 </div>
 
-<<<<<<< HEAD
-@code {
-    private void RedirectToLogin()
-    {
-        Navigation.NavigateTo("/login");
-    }
-}
-=======
-  
->>>>>>> 230d044b6afcb745ab8d418295da8c43078c0935
+
+
+
+
+<div class="container">
+    <div class="row">
+        <div class="col">
+            <div class="card" style="width: 14rem;">
+                <div class="card-body">
+                    <img src="/images/html-css.jpeg" alt="HTML & CSS" style="width: 100%; height: 200px;" class="rounded float-start" />
+                    <h5 class="card-title">HTML</h5>
+                    <h6 class="card-subtitle mb-2 text-muted">בניית דף אינטרנט</h6>
+                    <p class="card-text">איך לבנות דף אינטרנט בעזרת HTML התחל לבנות דפים לאתר שלך</p>
+                    <a href="/html-page" class="btn btn-primary btn-lg active" role="button" aria-pressed="true" style="background-color: green;">המשך</a>
+                </div>
+            </div>
+        </div>
+        <div class="col">
+            <div class="card" style="width: 14rem;">
+                <div class="card-body">
+                    <img src="/images/bootstrap.jpeg" style="width: 100%; height: 200px;" class="rounded float-start" />
+                    <h5 class="card-title">Bootstrap</h5>
+                    <h6 class="card-subtitle mb-2 text-muted">עיצוב בעזרת Bootstrap</h6>
+                    <p class="card-text">עיצוב מתקדם</p>
+                    <br/>
+                    <br/>
+                    <a href="#" class="btn btn-primary btn-lg active" role="button" aria-pressed="true" style="background-color: green;">המשך</a>
+                </div>
+            </div>
+        </div>
+        <div class="col">
+            <div class="card" style="width: 14rem;">
+                <div class="card-body">
+                    <img src="/images/sqlite.png" style="width: 100%; height: 200px;" />
+                    <h5 class="card-title">SQLite</h5>
+                    <h6 class="card-subtitle mb-2 text-muted">בסיסי נתונים</h6>
+                    <p class="card-text">הוספת בסיס נתונים לפרויקט</p>
+                    <br/>                  
+                    <a href="/SQLite-page" class="btn btn-primary btn-lg active" role="button" aria-pressed="true" style="background-color: green;">המשך</a>
+                </div>
+            </div>
+        </div>
+        <div class="col">
+            <div class="card" style="width: 14rem;">
+                <div class="card-body">
+                    <img src="/images/microsoftblazor.png" style="width: 100%; height: 200px;" />
+                    <h5 class="card-title">Blazor</h5>
+                    <h6 class="card-subtitle mb-2 text-muted"></h6>
+                    <p class="card-text">איך לבנות אתר שימוש בדפי Razor</p>
+                    <br />
+                    <br />
+                    <a href="/blazor-page" class="btn btn-primary btn-lg active" role="button" aria-pressed="true" style="background-color: green;">המשך</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,7 +1,6 @@
-﻿@inherits LayoutComponentBase
-<<<<<<< HEAD
+﻿@inherits ForYod.Components.BaseComponent
+
 @using ForYod.Components.Layout
-@inject ForYod.Components.Services.UserService UserService
 @inject NavigationManager Navigation
 
 <style>
@@ -15,49 +14,56 @@
         left: 10px;
         z-index: 1000; /* Ensure it stays on top */
     }
+
+    .footer {
+        background-color: #d3d3d3; /* Light grey */
+        padding: 20px;
+        color: black;
+        text-align: center;
+    }
 </style>
 
 <div class="top-left">
-    @if (UserService.FullName == "not")
+    @if (UserFullName == "not")
     {
         <button @onclick="RedirectToLogin" class="btn btn-primary">Login</button>
     }
     else
     {
-        <p>שלום, @UserService.FullName!</p>
+        <p>שלום, @UserFullName!</p>
     }
 </div>
-=======
->>>>>>> 230d044b6afcb745ab8d418295da8c43078c0935
 
 <div class="page">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link href="bootstrap/bootstrap.min.css" rel="stylesheet">
+        <script src="js/bootstrap.bundle.min.js"></script>
+    </head>
     <div class="sidebar">
         <NavMenu />
     </div>
 
     <main>
-<<<<<<< HEAD
-=======
-        <div class="top-row px-4">
-            <a href="https://learn.microsoft.com/aspnet/core/" target="_blank">About</a>
-        </div>
-
->>>>>>> 230d044b6afcb745ab8d418295da8c43078c0935
         <article class="content px-4">
             @Body
         </article>
     </main>
 </div>
-
-<<<<<<< HEAD
+<br />
+<br />
 <footer class="footer">
     <div class="footer-content">
         <div class="footer-text">
             <!-- Add your footer text here -->
-            <p>אתר קורס תכנות באינטרנט של ציזנר גיא</p>
+            <p>   אתר קורס תכנות באינטרנט  אסף אילן וציזנר גיא</p>
+            
         </div>
         <div class="footer-menus">
             <!-- Add your footer menus here -->
+            <h6> ניצור פוטר של האתר בתבנית הראשית של האתר</h6>
             <ul>
                 <li><a href="/privacy">Privacy Policy</a></li>
                 <li><a href="/terms">Terms of Service</a></li>
@@ -80,32 +86,12 @@
         })();
     </script>
 </footer>
-=======
-<div class="modal-footer">
-
-  
-    <div id="bthn" lang="en"></div><script>
-                                       (function () {
-                                           var script = document.createElement("script");
-                                           script.type = "text/javascript";
-                                           script.src = "https://bringthemhomenow.net/1.1.0/hostages-ticker.js";
-                                           script.setAttribute(
-                                               "integrity",
-                                               "sha384-DHuakkmS4DXvIW79Ttuqjvl95NepBRwfVGx6bmqBJVVwqsosq8hROrydHItKdsne"
-                                           );
-                                           script.setAttribute("crossorigin", "anonymous");
-                                           document.getElementsByTagName("head")[0].appendChild(script);
-                                       })();
-    </script>
-</div>
->>>>>>> 230d044b6afcb745ab8d418295da8c43078c0935
 
 <div id="blazor-error-ui">
     An unhandled error has occurred.
     <a href="" class="reload">Reload</a>
     <a class="dismiss">🗙</a>
 </div>
-<<<<<<< HEAD
 
 @code {
     private void RedirectToLogin()
@@ -113,5 +99,3 @@
         Navigation.NavigateTo("/login");
     }
 }
-=======
->>>>>>> 230d044b6afcb745ab8d418295da8c43078c0935

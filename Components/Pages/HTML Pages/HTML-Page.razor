@@ -1,13 +1,19 @@
 ﻿@page "/html-page"
 @layout ForYod.Components.Layout.EmptyLayout
+@inherits ForYod.Components.BaseComponent
 @inject NavigationManager Navigation
-@using ForYod.Components.Pages.HTML_Pages
-<<<<<<< HEAD
-@using ForYod.Components.Services
 
-@inject UserService UserService
-=======
->>>>>>> 230d044b6afcb745ab8d418295da8c43078c0935
+
+<div class="top-left">
+    @if (UserFullName == "not")
+    {
+        <p>not logged</p>
+    }
+    else
+    {
+        <p>שלום, @UserFullName!</p>
+    }
+</div>
 
 <div class="container">
     <div class="left-pane">
@@ -26,10 +32,7 @@
         <button class="floating-button" style="width: 200px; height: 50px;" @onclick="NavigateToMainPage">חזרה לדף ראשי</button>
     </div>
     <div class="right-pane">
-<<<<<<< HEAD
-=======
-        
->>>>>>> 230d044b6afcb745ab8d418295da8c43078c0935
+
         @if (selectedMenuItem == "First")
         {
             <HTML_Lesson1 />
@@ -42,14 +45,8 @@
         {
             <My_First_Blazor />
         }
-<<<<<<< HEAD
         else if (selectedMenuItem == "HTMLToBlazor")
         {
-=======
-
-        else if (selectedMenuItem == "HTMLToBlazor")
-                {
->>>>>>> 230d044b6afcb745ab8d418295da8c43078c0935
             <HTML_To_Blazor />
         }
         else if (selectedMenuItem == "Tables")
@@ -68,37 +65,24 @@
         {
             <p>Content for HTML to ASP.net web Pages</p>
         }
-<<<<<<< HEAD
-    </div>
-</div>
 
-@if (UserService.FullName != "not")
-{
-    <p class="login-status">שלום, @UserService.FullName!</p>
-}
-else
-{
-    <p class="login-status">not logged</p>
-}
-
-<style>
-=======
-  
     </div>
 </div>
 
 <style>
+    .top-left {
+        position: fixed;
+        top: 10px;
+        left: 10px;
+        z-index: 1000; /* Ensure it stays on top */
+        text-align: left;
+    }
 
-
->>>>>>> 230d044b6afcb745ab8d418295da8c43078c0935
     body {
         font-family: Arial, sans-serif;
         font-size: 18px;
     }
-<<<<<<< HEAD
 
-=======
->>>>>>> 230d044b6afcb745ab8d418295da8c43078c0935
     html, body {
         height: 100%;
         margin: 0;
@@ -188,24 +172,10 @@ else
         .floating-button:hover {
             background-color: #0056b3;
         }
-<<<<<<< HEAD
-
-    .login-status {
-        position: fixed;
-        top: 10px;
-        left: 10px;
-        z-index: 1000; /* Ensures it stays on top */
-    }
 </style>
 
 @code {
     private string selectedMenuItem = "First";
-=======
-</style>
-
-@code {
-    private string selectedMenuItem = "Intro";
->>>>>>> 230d044b6afcb745ab8d418295da8c43078c0935
 
     private void SelectMenuItem(string menuItem)
     {
