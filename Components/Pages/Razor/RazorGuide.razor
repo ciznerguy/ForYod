@@ -5,6 +5,13 @@
 <link href="_content/Blazor.Bootstrap/blazor.bootstrap.css" rel="stylesheet" />
 
 <h3>מדריך Razor</h3>
+<div style="text-align: right; font-size: 20px;">
+    <pre>
+    <code>Razor</code> <span dir="rtl">כדי ליצור דף</span> <span dir="rtl">גשו לספר בעמוד 19</span>
+    </pre>
+</div>
+
+
 
 <ul class="nav nav-tabs">
     <li class="nav-item">
@@ -16,27 +23,51 @@
     <li class="nav-item">
         <a class="nav-link" id="tab3-tab" data-bs-toggle="tab" href="#tab3" role="tab" aria-controls="tab3" aria-selected="false">דוגמה 3</a>
     </li>
+    <li class="nav-item">
+        <a class="nav-link" id="tab4-tab" data-bs-toggle="tab" href="#tab4" role="tab" aria-controls="tab4" aria-selected="false">דוגמה 4</a>
+    </li>
 </ul>
 
 <div class="tab-content mt-3">
+
     <div class="tab-pane fade show active" id="tab1" role="tabpanel" aria-labelledby="tab1-tab">
         <h3>דוגמה מספר 1</h3>
+        <p>שילוב בין קוד #C לקוד Razor</p>
+        <h1>שלום, </h1>
+        <p>שמי @name התאריך והשעה עכשיו: @DateTime.Now.ToString()</p>
+        @code
+        {
+            string name = "גיא";
+        }
+
+        <pre>
+            <code>
+            &lt;h1&gt;<span dir="rtl">שלום,</span> &lt;/h1&gt;<br />
+            &lt;p&gt;<span dir="rtl">שמי &#64;name התאריך והשעה עכשיו:</span> &#64;DateTime.Now.ToString()&lt;/p&gt;<br />
+            &#64;code {<br />
+            &nbsp;&nbsp;&nbsp;&nbsp;string name = <span dir="rtl">&quot;גיא&quot;;</span><br />
+            &nbsp;&nbsp;&nbsp;&nbsp;}
+            </code>
+        </pre>
+
+    </div>
+
+    <div class="tab-pane fade" id="tab2" role="tabpanel" aria-labelledby="tab2-tab">
+        <h3>דוגמה מספר 2</h3>
         <p>כפתור המפעיל את המונה ומציג את מספר הפעמים שהכפתור נלחץ.</p>
         <p>Counter: @counter1</p>
         <button class="btn btn-primary" @onclick="IncrementCounter1">Increment</button>
 
         <pre>
         <code>
-            &lt;p&gt;Counter: &#64;counter1&lt;/p&gt;<br />
-            &lt;button class=&quot;btn btn-primary&quot; &#64;onclick=&quot;IncrementCounter1&quot;&gt;Increment&lt;/button&gt;
-
-        <p dir="ltr">
-               : חשוב להוסיף את פעולת הקוד לקוד הקומפוננטה<br />
-            </p>
-            private void IncrementCounter1()
-                    {
-                        counter1++;
-                    }
+                &lt;p&gt;Counter: &#64;counter1&lt;/p&gt;<br />
+                &lt;button class=&quot;btn btn-primary&quot; &#64;onclick=&quot;IncrementCounter1&quot;&gt;Increment&lt;/button&gt;<br />
+                &#64;code {<br />
+                &nbsp;&nbsp;private void IncrementCounter1()<br />
+                &nbsp;&nbsp;{<br />
+                &nbsp;&nbsp;&nbsp;&nbsp;counter1++;<br />
+                &nbsp;&nbsp;}<br />
+               &nbsp;&nbsp;  }
             </code>
         </pre>
 
@@ -46,72 +77,49 @@
         <img src="/images/razor 1.png" width="800" height="300" />
     </div>
 
-    <div class="tab-pane fade" id="tab2" role="tabpanel" aria-labelledby="tab2-tab">
-        <h3>דוגמה מספר 2</h3>
-        <p>  כפתור המעדכן את מחרוזת ההודעה בשעה שהכפתור נלחץ </p>
+    <div class="tab-pane fade" id="tab3" role="tabpanel" aria-labelledby="tab3-tab">
+        <h3>דוגמה מספר 3</h3>
+        <p>כפתור המעדכן את מחרוזת ההודעה בשעה שהכפתור נלחץ.</p>
         <p>Message: @message</p>
         <button class="btn btn-secondary" @onclick="UpdateMessage">Update Message</button>
 
         <pre>
         <code>
-                    &lt;p&gt;Message: &#64;message&lt;/p&gt;<br />
-                    &lt;button class=&quot;btn btn-secondary&quot; &#64;onclick=&quot;UpdateMessage&quot;&gt;Update Message&lt;/button&gt;<br />
-                    &#64;code {<br />
-                    &nbsp;&nbsp;private void UpdateMessage()<br />
-                    &nbsp;&nbsp;{<br />
-                    &nbsp;&nbsp;&nbsp;&nbsp;message = <span dir="rtl">&quot;ההודעה עודכנה בשעה &quot;</span> + DateTime.Now.ToString(&quot;HH:mm:ss&quot;);<br />
-                    &nbsp;&nbsp;}<br />
-                    }
-                </code>
+                &lt;p&gt;Message: &#64;message&lt;/p&gt;<br />
+                &lt;button class=&quot;btn btn-secondary&quot; &#64;onclick=&quot;UpdateMessage&quot;&gt;Update Message&lt;/button&gt;<br />
+                &#64;code {<br />
+                &nbsp;&nbsp;private void UpdateMessage()<br />
+                &nbsp;&nbsp;{<br />
+                &nbsp;&nbsp;&nbsp;&nbsp;message = <span dir="rtl">&quot;ההודעה עודכנה בשעה &quot;</span> + DateTime.Now.ToString(&quot;HH:mm:ss&quot;);<br />
+                &nbsp;&nbsp;}<br />
+                &nbsp;&nbsp; }
+            </code>
         </pre>
+
         <p dir="rtl">
             כך יראה קוד דף <code> razor </code>
         </p>
         <img src="/images/razor 2.png" width="800" height="300" />
     </div>
-    <div class="tab-pane fade" id="tab3" role="tabpanel" aria-labelledby="tab3-tab">
-        <h3>דוגמה מספר 3</h3>
+
+    <div class="tab-pane fade" id="tab4" role="tabpanel" aria-labelledby="tab4-tab">
+        <h3>דוגמה מספר 4</h3>
         <p>כפתור המעדכן את שעת הלחיצה עליו.</p>
         <p>השעה עכשיו: @currentTime</p>
         <button class="btn btn-success" @onclick="UpdateTime">Update Time</button>
 
         <pre>
         <code>
-            &lt;p&gt;<span dir="rtl">השעה עכשיו:</span> &#64;currentTime&lt;/p&gt;<br />
-            &lt;button class=&quot;btn btn-success&quot; &#64;onclick=&quot;UpdateTime&quot;&gt;Update Time&lt;/button&gt;<br />
-            &#64;code {<br />
-            &nbsp;&nbsp;private void UpdateTime()<br />
-            &nbsp;&nbsp;{<br />
-            &nbsp;&nbsp;&nbsp;&nbsp;currentTime = DateTime.Now.ToString(&quot;HH:mm:ss&quot;);<br />
-            &nbsp;&nbsp;}<br />
-            }
-        </code>
-    </pre>
-
-        <p dir="rtl">
-            כך יראה קוד דף <code> razor </code>
-        </p>
-        <img src="/images/razor 3.png" width="800" height="300" />
-    </div>
-
-    <div class="tab-pane fade" id="tab3" role="tabpanel" aria-labelledby="tab3-tab">
-        <h3>דוגמה מספר 3</h3>
-        <p>כפתור המעדכן את שעת הלחיצה עליו.</p>
-        <p>השעה עכשיו היא : @currentTime</p>
-        <button class="btn btn-success" @onclick="UpdateTime">Update Time</button>
-
-        <pre>
-        <code>
-            &lt;p&gt;השעה עכשיו היא: &#64;currentTime&lt;/p&gt;<br />
-            &lt;button class=&quot;btn btn-success&quot; &#64;onclick=&quot;UpdateTime&quot;&gt;Update Time&lt;/button&gt;<br /><br />
-            &#64;code {<br />
-            &nbsp;&nbsp;private void UpdateTime()<br />
-            &nbsp;&nbsp;{<br />
-            &nbsp;&nbsp;&nbsp;&nbsp;currentTime = DateTime.Now.ToString(&quot;HH:mm:ss&quot;);<br />
-            &nbsp;&nbsp;}<br />
-            }
-        </code>
-    </pre>
+                &lt;p&gt;<span dir="rtl">השעה עכשיו:</span> &#64;currentTime&lt;/p&gt;<br />
+                &lt;button class=&quot;btn btn-success&quot; &#64;onclick=&quot;UpdateTime&quot;&gt;Update Time&lt;/button&gt;<br />
+                &#64;code {<br />
+                &nbsp;&nbsp;private void UpdateTime()<br />
+                &nbsp;&nbsp;{<br />
+                &nbsp;&nbsp;&nbsp;&nbsp;currentTime = DateTime.Now.ToString(&quot;HH:mm:ss&quot;);<br />
+                &nbsp;&nbsp;}<br />
+                  &nbsp;&nbsp;  }
+            </code>
+        </pre>
 
         <p dir="rtl">
             כך יראה קוד דף <code> razor </code>
